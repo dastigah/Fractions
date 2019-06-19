@@ -1,8 +1,8 @@
 #include "Fraction.H"
+#include <iostream>
 
 void Fraction::simplify(){
 	int gcd = getGCD(m_numerator,m_denominator);
-	
 	if (gcd > 1){
 		m_numerator /= gcd;
 		m_denominator /= gcd;
@@ -15,7 +15,7 @@ int Fraction::getGCD(int a, int b){
 
 	if (b == 0) return a;
 	else{
-		return (b,a%b);
+		return getGCD(b,a%b);
 	}
 }
 
