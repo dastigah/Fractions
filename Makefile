@@ -17,8 +17,8 @@ EXELIST=TestFraction
 clean: 
 	rm -rf $(addprefix $(BIN),$(BINLIST)) $(addprefix $(BIN),$(EXELIST))
 
-$(TESTFRACTION): $(BIN)$(addsuffix .o, $(TESTFRACTION))
-	$(CC) -pthread $(<) $(LIB)libgtest.a -o $(BIN)$(@)
+$(TESTFRACTION): $(BIN)$(addsuffix .o, $(TESTFRACTION)) $(BIN)Fraction.o
+	$(CC) -pthread $(^) $(LIB)libgtest.a -o $(BIN)$(@)
 
 $(BIN)%.o : $(SOURCE)%.cpp
 	$(CC) $(FLAGS) -c $(<) -o $(@)

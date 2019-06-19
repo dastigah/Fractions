@@ -28,11 +28,13 @@ TEST_F(TestFraction, testDivByZero){
 }
 
 TEST_F(TestFraction, testSimplify){
+	Fraction tst = Fraction(8,12);
+	tst.simplify();
+	EXPECT_TRUE(tst.getNumerator() == 2 && tst.getDenominator() == 3);
 
-}
-
-TEST_F(TestFraction, testGCD){
-
+	Fraction tst2 = Fraction(20,4);
+	tst2.simplify();
+	EXPECT_TRUE(tst2.getNumerator() == 5 && tst2.getDenominator() == 1);
 }
 
 TEST_F(TestFraction, testAdd){
