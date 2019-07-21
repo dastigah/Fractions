@@ -26,3 +26,22 @@ bool Fraction::operator==(const Fraction & obj) const{
 
 	return (m_numerator * obj.getDenominator()) == (obj.getNumerator() * m_denominator);
 }
+
+bool Fraction::operator>(const Fraction & obj) const {
+	if (m_denominator == obj.getDenominator()){
+		return m_numerator > obj.getNumerator();
+	}
+
+	return (m_numerator * obj.getDenominator()) > (obj.getNumerator() * m_denominator);
+}
+
+bool Fraction::operator<(const Fraction & obj) const {
+	return (*this == obj || *this > obj) ? false : true;
+}
+
+
+//Arithmetic operatorators
+
+Fraction operator+(const Fraction &+) const{
+	
+}
