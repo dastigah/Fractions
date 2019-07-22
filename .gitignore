@@ -1,0 +1,8 @@
+bin/*
+!bin/.gitkeep
+
+#libgtest.a should be generated on the local pc
+external/googletest-master/googletest/CMakeCache.txt
+external/googletest-master/googletest/lib/
+
+
